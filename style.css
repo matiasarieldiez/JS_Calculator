@@ -1,0 +1,133 @@
+#calculator {
+  border: 1px solid black;
+  width: 400px;
+  height: 600px;
+  margin: 150px auto;
+  background-color: rgb(28, 21, 21);
+  padding: 3px;
+  border-radius: 5px;
+  display: grid;
+  grid-template-areas: "display display display display" "clear backspace percentage divide" "seven eight nine multiply" "four five six minus" "one two three plus" "plusMinus zero decimal equal";
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 3fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 2px;
+  font-family: "Roboto Mono", monospace;
+}
+
+#display {
+  grid-area: display;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+  background-color: rgb(28, 21, 21);
+  color: white;
+}
+
+.button {
+  background-color: rgb(67, 64, 64);
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 5px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.button--clear {
+  color: rgb(210, 52, 52);
+  background-color: rgb(44, 42, 42);
+}
+.button--backspace {
+  color: rgb(210, 150, 52);
+  background-color: rgb(44, 42, 42);
+}
+.button--operator {
+  color: rgb(66, 168, 66);
+  background-color: rgb(44, 42, 42);
+}
+.button--equal {
+  background-color: rgb(66, 168, 66);
+  color: white;
+}
+
+#backspace {
+  grid-area: backspace;
+}
+
+#clear {
+  grid-area: clear;
+}
+
+#percentage {
+  grid-area: percentage;
+}
+
+#divide {
+  grid-area: divide;
+}
+
+#seven {
+  grid-area: seven;
+}
+
+#eight {
+  grid-area: eight;
+}
+
+#nine {
+  grid-area: nine;
+}
+
+#multiply {
+  grid-area: multiply;
+}
+
+#four {
+  grid-area: four;
+}
+
+#five {
+  grid-area: five;
+}
+
+#six {
+  grid-area: six;
+}
+
+#minus {
+  grid-area: minus;
+}
+
+#one {
+  grid-area: one;
+}
+
+#two {
+  grid-area: two;
+}
+
+#three {
+  grid-area: three;
+}
+
+#plus {
+  grid-area: plus;
+}
+
+#plusMinus {
+  grid-area: plusMinus;
+}
+
+#zero {
+  grid-area: zero;
+}
+
+#decimal {
+  grid-area: decimal;
+}
+
+#equal {
+  grid-area: equal;
+}
