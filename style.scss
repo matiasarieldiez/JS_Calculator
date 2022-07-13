@@ -9,11 +9,11 @@
     display: grid;
     grid-template-areas:
         "display display display display"
-        "clear backspace percentage divide"
+        "clear clear backspace divide"
         "seven eight nine multiply"
         "four five six minus"
         "one two three plus"
-        "plusMinus zero decimal equal";
+        "decimal zero equal equal";
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 3fr 1fr 1fr 1fr 1fr 1fr;
     gap: 2px;
