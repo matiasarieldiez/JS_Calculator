@@ -41,6 +41,10 @@
     justify-content: center;
     align-items: center;
 
+    &:hover {
+        background-color: lighten(rgb(67, 64, 64), 10%);
+    }
+
     &--clear {
         color: rgb(210, 52, 52);
         background-color: rgb(44, 42, 42);
@@ -54,11 +58,18 @@
     &--operator {
         color: rgb(66, 168, 66);
         background-color: rgb(44, 42, 42);
+
+        &:hover {
+            background-color: lighten(rgb(44, 42, 42), 20%);
+        }
     }
 
     &--equal {
         background-color: rgb(66, 168, 66);
         color: white;
+        &:hover {
+            background-color: lighten(rgb(66, 168, 66), 20%);
+        }
     }
 }
 
