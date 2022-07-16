@@ -14,14 +14,22 @@
   font-family: "Roboto Mono", monospace;
 }
 
-#display {
+.display {
   grid-area: display;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   font-size: 40px;
+  text-align: center;
   background-color: rgb(28, 21, 21);
   color: white;
+}
+.display--previous-value {
+  height: 40%;
+  margin-top: auto;
+  text-align: end;
+}
+.display--current-value {
+  height: 60%;
+  margin-top: auto;
+  text-align: end;
 }
 
 .button {
@@ -38,7 +46,7 @@
 .button:hover {
   background-color: #5d5959;
 }
-.button--clear {
+.button--clear-all {
   color: rgb(210, 52, 52);
   background-color: rgb(44, 42, 42);
 }
@@ -53,12 +61,15 @@
 .button--operator:hover {
   background-color: #605c5c;
 }
-.button--equal {
+.button--equals {
   background-color: rgb(66, 168, 66);
   color: white;
 }
-.button--equal:hover {
+.button--equals:hover {
   background-color: #82ce82;
+}
+.button--text {
+  display: none;
 }
 
 #backspace {

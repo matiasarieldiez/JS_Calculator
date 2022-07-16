@@ -15,49 +15,70 @@
                         rel="stylesheet">
                 <script src="https://kit.fontawesome.com/e4d9215331.js"
                         crossorigin="anonymous"></script>
-                <script src="./script.js"></script>
+                <script src="./script.js" defer></script>
                 <title>JS Calculator</title>
         </head>
 
         <body>
                 <section id="calculator" class="calculator">
-                        <div id="display" class="display">12.890</div>
-                        <div id="clear" class="button button--clear"><i
+                        <div id="display" class="display">
+                                <div class="display display--previous-value">
+                                </div>
+                                <div class="display display--current-value">0
+                                </div>
+                        </div>
+                        <div id="clear" class="button button--clear-all"><i
                                         class="fa-solid fa-c"></i></div>
                         <div id="backspace" class="button button--backspace"><i
                                         class="fa-solid fa-delete-left"></i>
                         </div>
                         <div id="divide" class="button button--operator"><i
-                                        class="fa-solid fa-divide"></i></div>
+                                        class="fa-solid fa-divide"></i><span
+                                        class="button--text">/</span></div>
                         <div id="multiply" class="button button--operator"><i
-                                        class="fa-solid fa-xmark"></i></div>
+                                        class="fa-solid fa-xmark"></i><span
+                                        class="button--text">*</span></div>
                         <div id="add" class="button button--operator"><i
-                                        class="fa-solid fa-plus"></i></div>
+                                        class="fa-solid fa-plus"></i><span
+                                        class="button--text">+</span></div>
                         <div id="substract" class="button button--operator"><i
-                                        class="fa-solid fa-minus"></i></div>
-                        <div id="equal" class="button button--equal"><i
-                                        class="fa-solid fa-equals"></i></div>
-                        <div id="decimal" class="button button--number">.</div>
+                                        class="fa-solid fa-minus"></i><span
+                                        class="button--text">-</span></div>
+                        <div id="equal" class="button button--equals"><i
+                                        class="fa-solid fa-equals"></i><span
+                                        class="button--text">=</span></div>
+                        <div id="decimal" class="button button--decimal">
+                                .</div>
                         <div id="zero" class="button button--number"><i
-                                        class="fa-solid fa-0"></i></div>
+                                        class="fa-solid fa-0"></i><span
+                                        class="button--text">0</span></div>
                         <div id="one" class="button button--number"><i
-                                        class="fa-solid fa-1"></i></div>
+                                        class="fa-solid fa-1"></i><span
+                                        class="button--text">1</span></div>
                         <div id="two" class="button button--number"><i
-                                        class="fa-solid fa-2"></i></div>
+                                        class="fa-solid fa-2"></i><span
+                                        class="button--text">2</span></div>
                         <div id="three" class="button button--number"><i
-                                        class="fa-solid fa-3"></i></div>
+                                        class="fa-solid fa-3"></i><span
+                                        class="button--text">3</span></div>
                         <div id="four" class="button button--number"><i
-                                        class="fa-solid fa-4"></i></div>
+                                        class="fa-solid fa-4"></i><span
+                                        class="button--text">4</span></div>
                         <div id="five" class="button button--number"><i
-                                        class="fa-solid fa-5"></i></div>
+                                        class="fa-solid fa-5"></i><span
+                                        class="button--text">5</span></div>
                         <div id="six" class="button button--number"><i
-                                        class="fa-solid fa-6"></i></div>
+                                        class="fa-solid fa-6"></i><span
+                                        class="button--text">6</span></div>
                         <div id="seven" class="button button--number"><i
-                                        class="fa-solid fa-7"></i></div>
+                                        class="fa-solid fa-7"></i><span
+                                        class="button--text">7</span></div>
                         <div id="eight" class="button button--number"><i
-                                        class="fa-solid fa-8"></i></div>
+                                        class="fa-solid fa-8"></i><span
+                                        class="button--text">8</span></div>
                         <div id="nine" class="button button--number"><i
-                                        class="fa-solid fa-9"></i></div>
+                                        class="fa-solid fa-9"></i><span
+                                        class="button--text">9</span></div>
                 </section>
         </body>
 
