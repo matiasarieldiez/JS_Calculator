@@ -1,4 +1,28 @@
-# JavaScript Calculator Project
+### JavaScript Calculator Project
+
+## Outline
+
+-   Create a README.md on your Calculator repository that includes a picture of the design you will be reproducing
+-   Using HTML + SCSS, recreate the design that you chose
+-   In the README.md add a breakdown of your project for the JavaScript part of the code. We encourage you to be as granular as possible.
+-   Using the project breakdown you've came up with, write the necessary code to make your calculator work.
+
+## MVP
+
+# Part 1
+
+-   1. Create a calculator to be rendered to the html page
+-   2. it should have number keys from 0 to 9
+-   3. It should have operator keys (+, -, /, \*, =)
+-   4. It should have a display rendering the current calculation in a box at the top
+-   5. It should also have a “.” key
+
+# Part 2
+
+-   1. Should render the current calculation in a box at the top (calculator display)
+-   2. It should handle decimals
+-   3. It doesn’t need to support orders of operation
+-   4. It should not use eval() or Function() constructor
 
 ## Insipration Designs
 
