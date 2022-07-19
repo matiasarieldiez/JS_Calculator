@@ -1,5 +1,4 @@
 // A. Grab the Items from the DOM for later use and manipulation
-
 // A1. Grab all Number Buttons (0-9)
 const numberButtons = document.querySelectorAll(".button--number");
 console.log(numberButtons);
@@ -41,7 +40,6 @@ const currentValueDisplay = document.querySelector(".display--current-value");
 console.log(currentValueDisplay);
 
 // B. Actions at loading
-
 // B1. Clear Values at first loading
 previousValueDisplay.innerText = "";
 currentValueDisplay.innerText = 0;
@@ -55,7 +53,6 @@ let operandB = 0; // We'll use these variables to perform the equation/caculatio
 let calculationString = ""; // We'll use these variables to perform the equation/caculation/math
 
 // C. Actions to happen when I click the different buttons from the calculator
-
 // C1. Press a number Button (0–9)
 numberButtons.forEach((button) => {
     // Add Event Listener to Decide what happens when clicked
@@ -86,14 +83,17 @@ numberButtons.forEach((button) => {
 operatorButtons.forEach((button) => {
     // Add Event Listener to Decide what happens when clicked
     button.addEventListener("click", () => {
+        // Check if the previous value was an operator. If so, operators cannot be selected, it's time to select another number
         if (previousButtonType === "operator") {
             return;
         }
-
+        // Validation for chained operations after choosing an operator after a result was already given (A + B = C => Operator).
+        // Clear the Previous value display so it can display the new values
         if (previousValueDisplay.innerText != 0) {
             previousValueDisplay.innerText = "";
         }
 
+        // Set the display values for Previous and Current Displays
         if (currentValueDisplay.innerText != 0) {
             operandA = currentValueDisplay.innerText;
             previousValueDisplay.innerText +=
@@ -101,6 +101,7 @@ operatorButtons.forEach((button) => {
             currentValueDisplay.innerText = "";
         }
 
+        // Store the operation type in a variable for future calculation inside Equal's button event listener and previousButtonType checks
         switch (button.lastChild.innerText) {
             case "+":
                 operatorValue = "add";
@@ -115,6 +116,8 @@ operatorButtons.forEach((button) => {
                 operatorValue = "multiply";
                 break;
         }
+
+        //Set PreviousButton Type for future validations
         previousButtonType = "operator";
     });
 });
@@ -122,33 +125,44 @@ operatorButtons.forEach((button) => {
 // C3. Press the Decimal Button
 // Add Event Listener to Decide what happens when clicked
 decimalButton.addEventListener("click", () => {
-    if (previousButtonType === "operator" || previousButtonType === "equal") {
+    // Check the previousButtonType to handle decimal notation properly and reset previous value Displayed for a new operation to happen
+    if (previousButtonType === "equal") {
         currentValueDisplay.innerText = "0.";
         previousValueDisplay.innerText = "";
     }
 
-    // If there's already ONE decimal point, no decimal point should be added.
+    // Validations to handle decimal notation properly
+    if (previousButtonType === "operator") {
+        currentValueDisplay.innerText = "0.";
+    }
+
+    // Validations to handle decimal notation properly
     if (currentValueDisplay.innerText == 0) {
         currentValueDisplay.innerText = "0.";
     }
 
+    // If there's already ONE decimal point, no decimal point should be added.
     if (!currentValueDisplay.innerText.includes(".")) {
         currentValueDisplay.innerText += decimalButton.innerText;
     }
 
+    // Set PreviousButton Type for future validations
     previousButtonType = "decimal";
 });
 
 // C4. Press the Equals Button
 // Add Event Listener to Decide what happens when clicked
 equalsButton.addEventListener("click", () => {
+    // If previous button type was equal, equal cannot be pressed again
     if (previousButtonType !== "equal") {
+        // Previous and Current Display Values Update
         operandB = currentValueDisplay.innerText;
         previousValueDisplay.innerText += currentValueDisplay.innerText;
         currentValueDisplay.innerText = "";
         calculationString =
             previousValueDisplay.innerText + currentValueDisplay.innerHTML;
 
+        // Operation Equation
         switch (operatorValue) {
             case "add":
                 calculationString = parseFloat(operandA) + parseFloat(operandB);
@@ -163,6 +177,8 @@ equalsButton.addEventListener("click", () => {
                 calculationString = parseFloat(operandA) * parseFloat(operandB);
                 break;
         }
+
+        // Update Current Value with Result
         currentValueDisplay.innerText = calculationString;
         previousButtonType = "equal";
     }
@@ -172,6 +188,7 @@ equalsButton.addEventListener("click", () => {
 // C5. Press the Clear Button
 // Add Event Listener to Decide what happens when clicked
 clearAllButton.addEventListener("click", () => {
+    // Clear all the values letting the calculator ready for a fresh new calculation
     previousValueDisplay.innerText = "";
     currentValueDisplay.innerText = 0;
     isNewNumber = true;
@@ -181,11 +198,14 @@ clearAllButton.addEventListener("click", () => {
 // C6. Press the Backspace Button
 // Add Event Listener to Decide what happens when clicked
 backspaceButton.addEventListener("click", () => {
+    // This button should be disabled if the previous button type was Equal or Clear all, as there's nothing to delete
     if (previousButtonType !== "equal" && previousButtonType !== "clear") {
         currentValueDisplay.innerText = currentValueDisplay.innerText.slice(
             0,
             -1,
         );
+
+        // Set PreviousButton Type for future validations
         previousButtonType = "backspace";
     }
 
