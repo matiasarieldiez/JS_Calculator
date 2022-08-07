@@ -86,3 +86,7 @@ My design is inspired in a mix between Windows 11 Calculator & Samsung Galaxy Ca
         -   C.6.1. Add Event Listener to Decide what happens when clicked
         -   C.6.2. This button should be disabled if the previous button type was Equal or Clear all, as there's nothing to delete
         -   C.6.3. Set PreviousButton Type for future validations
+
+## Screenshot
+
+![Screenshot](./js_calculator_1.jpg)
